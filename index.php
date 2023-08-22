@@ -1,8 +1,10 @@
 <?php
+declare(strict_types=1);
 
-function myDisplay(){
-$test = "ronaldo";
-echo "I love " . $test . "!";
+function myDisplay()
+{
+    $test = "ronaldo";
+    echo "I love " . $test . "!";
 }
 
 myDisplay();
@@ -10,7 +12,8 @@ myDisplay();
 $x = 6;
 echo "Hi, I have $x apples";
 
-function myTest() {
+function myTest()
+{
     $y = $GLOBALS['x'];
     echo "<h1>Variable x inside function is $y</h1>";
 }
@@ -24,10 +27,13 @@ myTest();
 print "This is print";
 echo "This is echo " . "Rafsan<br/>";
 
-class Car {
+class Car
+{
     public $color;
     public $model;
-    public function __construct($color, $model){
+
+    public function __construct($color, $model)
+    {
         $this->color = $color;
         $this->model = $model;
     }
@@ -48,9 +54,9 @@ echo $myCar2->message() . "<br/>";
 $time = date("H");
 echo "Time is $time" . "<br/>";
 
-$favColor= "blue";
+$favColor = "blue";
 
-switch ($favColor){
+switch ($favColor) {
     case "red":
         echo "This is red" . "<br/>";
         break;
@@ -64,7 +70,7 @@ switch ($favColor){
         echo "Nothing" . "<br/>";
 }
 
-for($x=0; $x<10; $x++){
+for ($x = 0; $x < 10; $x++) {
     echo "The number is $x" . "<br/>";
 }
 
@@ -74,18 +80,10 @@ foreach ($colors as $color) {
     echo "$color <br>";
 }
 
-function addNumbers(int $a, int $b): int
-{
-    return $a + $b;
-}
-
-//echo addNumbers(5, "5 days");
-// since strict is NOT enabled "5 days" is changed to int(5), and it will return 10
-
 echo "I like $colors[0]";
 
-$country = array("Africa"=>1, "Bangladesh"=>2, "Pakistan"=>3);
-echo "I am in " . $country['Africa']. "<br/>";
+$country = array("Africa" => 1, "Bangladesh" => 2, "Pakistan" => 3);
+echo "I am in " . $country['Africa'] . "<br/>";
 
 $cars = array(
     array("Volvo", 22, 18),
@@ -94,3 +92,12 @@ $cars = array(
 );
 
 echo $cars[0][1];
+?>
+
+<?php
+function addNumbers(int $a, int $b): int
+{
+    return $a + $b;
+}
+
+echo addNumbers(5, 5);
